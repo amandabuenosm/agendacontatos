@@ -43,4 +43,21 @@ public class Agenda {
         System.out.println("Erro na exportação dos contatos: " + e.getMessage());
     }
   }
+
+// função para inserção de novo contato
+  public void novocontato(String nome, String fone, String end) {
+    Contato contato = new Contato(nome, fone, end);
+        contatos.put(fone, contato);
+        System.out.println("Contato novo gravado com sucesso!");
+        exportacontato(); 
+  }
+
+// função de exclusão por telefone
+  public void deletaportelefone(String fone) {
+    if(contatos.remove(telefone) != null) {
+    System.out.println("Contato excluído com sucesso!");
+    } else {
+      System.out.println("Contato não localizado por esse telefone!");
+    } exportacontato();
+  }
 }
