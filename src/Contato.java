@@ -1,12 +1,12 @@
 public class Contato {
     private String nome;
-    private String telefone;
-    private String endereco;
+    private String fone;
+    private String end;
 
-    public Contato(String nome, String telefone, String endereco) {
+    public Contato(String nome, String fone, String end) {
         this.nome = nome;
-        this.telefone = telefone;
-        this.endereco = endereco;
+        this.fone = fone;
+        this.end = end;
     }
 
     // Getters
@@ -15,15 +15,15 @@ public class Contato {
     }
 
     public String getTelefone() {
-        return telefone;
+        return fone;
     }
 
     public String getEndereco() {
-        return endereco;
+        return end;
     }
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", Telefone: " + telefone + ", Endereço: " + endereco;
+        return "Nome: " + nome + ", Telefone: " + fone + ", Endereço: " + end;
     }
 }
