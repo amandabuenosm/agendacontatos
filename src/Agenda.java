@@ -60,4 +60,32 @@ public class Agenda {
       System.out.println("Contato não localizado por esse telefone!");
     } exportacontato();
   }
+
+// função de exclusão por nome
+  public void deletapornome(String nome) {
+      contatos.values().removeIf(contato -> contato.getNome().equalsIgnoreCase(nome));
+      System.out.println("Contato excluído com sucesso!");
+      exportacontato(); // Atualiza o arquivo após remover contatos
+  }
+  
+// função de busca de contatos por nome
+  public void contatospornome(String nome) {
+      for (Contato contato : contatos.values()) {
+          if (contato.getNome().equalsIgnoreCase(nome)) {
+              System.out.println(contato);
+              return;
+          }
+      }
+      System.out.println("Contato não localizado por esse nome!");
+  }
+  
+// função de busca de contatos por telefone
+  public void contatoporfone(String fone) {
+    Contato contato = contatos.get(fone);
+    if (contato != null) {
+        System.out.println(contato);
+    } else {
+        System.out.println("Contato não localizado por esse telefone!");
+    }
+  }
 }
