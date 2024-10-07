@@ -88,4 +88,33 @@ public class Agenda {
         System.out.println("Contato não localizado por esse telefone!");
     }
   }
+
+// função para listar contatos da agenda
+  public void listadecontato() {
+    if (contatos.isEmpty()) {
+        System.out.println("A agenda de contatos está vazia.");
+    } else {
+        for (Contato contato : contatos.values()) {
+            System.out.println(contato);
+        }
+    }
+    exportacontato(); 
+  }
+  
+// função de realizar chamada para determinado contato por telefone
+  public void fazerchamada(String fone) {
+      Contato contato = contatos.get(fone);
+      if (contato != null) {
+          System.out.println("Fazendo chamada para " + contato.getNome() + "...");
+      } else {
+          System.out.println("Contato não localizado por esse número!");
+      }
+  }
+  
+// função para excluir tudo da agenda
+  public void limpezadeagenda() {
+      contatos.clear();
+      System.out.println("Agenda foi limpa!");
+      exportacontato();
+  }
 }
