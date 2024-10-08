@@ -25,20 +25,18 @@ public class Agenda {
                 contatos.put(fone, contato);
             }
         }
-        System.out.println("Contatos importados!");
     } catch (IOException e) {
-        System.out.println("Erro na importação dos contatos: " + e.getMessage());
+        System.out.println("ERRO NA IMPORTAÇÃO DOS CONTATOS: " + e.getMessage());
     }
   }
 
-// função para exportar contatos
+// função para exportar/salvar/atualizar contatos
   public void exportacontato() {
     try (BufferedWriter bw = new BufferedWriter(new FileWriter(localarquivo))) {
         for (Contato contato : contatos.values()) {
             bw.write(contato.getNome() + "@" + contato.getTelefone() + "@" + contato.getEndereco());
             bw.newLine();
         }
-        System.out.println("Contatos exportados!");
     } catch (IOException e) {
         System.out.println("Erro na exportação dos contatos: " + e.getMessage());
     }
@@ -53,8 +51,11 @@ public class Agenda {
   }
 
 // função de exclusão por telefone
+/*
+ * ao rodar um número distinto do que se tem na lista, está aparecendo o aviso de contato não localizado + contato exportado. DEVE-SE apenas mostrar que número não foi localizado
+ */
   public void deletaportelefone(String fone) {
-    if(contatos.remove(telefone) != null) {
+    if(contatos.remove(fone) != null) {
     System.out.println("Contato excluído com sucesso!");
     } else {
       System.out.println("Contato não localizado por esse telefone!");
@@ -62,6 +63,9 @@ public class Agenda {
   }
 
 // função de exclusão por nome
+/*
+ * ao rodar um nome distinto do que se tem na lista, está aparecendo o aviso de contato não localizado + contato exportado. DEVE-SE apenas mostrar que nome não foi localizado
+ */
   public void deletapornome(String nome) {
       contatos.values().removeIf(contato -> contato.getNome().equalsIgnoreCase(nome));
       System.out.println("Contato excluído com sucesso!");
