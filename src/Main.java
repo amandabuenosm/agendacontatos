@@ -23,7 +23,7 @@ public class Main {
     opcaouser = scanner.nextInt();
     scanner.nextLine();
     
-    switch (opcao) {
+    switch (opcaouser) {
       case 1:
           agenda.importacontato("data/contatos.txt");
           break;
