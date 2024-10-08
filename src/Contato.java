@@ -9,7 +9,6 @@ public class Contato {
         this.end = end;
     }
 
-    // Getters
     public String getNome() {
         return nome;
     }
@@ -24,6 +23,9 @@ public class Contato {
 
     @Override
     public String toString() {
-        return "Nome: " + nome + ", Telefone: " + fone + ", Endereço: " + end;
+        return "Nome: " + nome +
+        "\nTelefone: " + fone +
+        "\nEndereço: " + end +
+        "\n----------------------------------";
     }
 }
