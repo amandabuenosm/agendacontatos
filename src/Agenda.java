@@ -46,31 +46,29 @@ public class Agenda {
   public void novocontato(String nome, String fone, String end) {
     Contato contato = new Contato(nome, fone, end);
         contatos.put(fone, contato);
-        System.out.println("Contato novo gravado com sucesso!");
+        System.out.println("CONTATO NOVO GRAVADO COM SUCESSO!");
         exportacontato(); 
   }
 
 // função de exclusão por telefone
-/*
- * ao rodar um número distinto do que se tem na lista, está aparecendo o aviso de contato não localizado + contato exportado. DEVE-SE apenas mostrar que número não foi localizado
- */
   public void deletaportelefone(String fone) {
     if(contatos.remove(fone) != null) {
-    System.out.println("Contato excluído com sucesso!");
+    System.out.println("CONTATO EXCLUÍDO COM SUCESSO!");
     } else {
-      System.out.println("Contato não localizado por esse telefone!");
+      System.out.println("CONTATO NÃO LOCALIZADO POR ESSE TELEFONE!");
     } exportacontato();
   }
 
 // função de exclusão por nome
-/*
- * ao rodar um nome distinto do que se tem na lista, está aparecendo o aviso de contato não localizado + contato exportado. DEVE-SE apenas mostrar que nome não foi localizado
- */
   public void deletapornome(String nome) {
-      contatos.values().removeIf(contato -> contato.getNome().equalsIgnoreCase(nome));
-      System.out.println("Contato excluído com sucesso!");
-      exportacontato(); // Atualiza o arquivo após remover contatos
+    boolean contatodeletado = contatos.values().removeIf(contato -> contato.getNome().equalsIgnoreCase(nome));
+    if (contatodeletado) {
+      System.out.println("CONTATO EXCLUÍDO COM SUCESSO!");
+    } else {
+      System.out.println("CONTATO NÃO LOCALIZADO POR ESSE NOME!");
+    } exportacontato();
   }
+
   
 // função de busca de contatos por nome
   public void contatospornome(String nome) {
@@ -79,8 +77,7 @@ public class Agenda {
               System.out.println(contato);
               return;
           }
-      }
-      System.out.println("Contato não localizado por esse nome!");
+      } System.out.println("CONTATO NÃO LOCALIZADO POR ESSE NOME!");
   }
   
 // função de busca de contatos por telefone
@@ -89,36 +86,35 @@ public class Agenda {
     if (contato != null) {
         System.out.println(contato);
     } else {
-        System.out.println("Contato não localizado por esse telefone!");
+        System.out.println("CONTATO NÃO LOCALIZADO POR ESSE TELEFONE!");
     }
   }
 
 // função para listar contatos da agenda
   public void listadecontato() {
     if (contatos.isEmpty()) {
-        System.out.println("A agenda de contatos está vazia.");
+        System.out.println("A AGENDA DE CONTATOS ESTÁ VAZIA!");
     } else {
         for (Contato contato : contatos.values()) {
             System.out.println(contato);
         }
-    }
-    exportacontato(); 
+    } exportacontato(); 
   }
   
 // função de realizar chamada para determinado contato por telefone
   public void fazerchamada(String fone) {
       Contato contato = contatos.get(fone);
       if (contato != null) {
-          System.out.println("Fazendo chamada para " + contato.getNome() + "...");
+          System.out.println("FAZENDO CHAMADA PARA " + contato.getNome() + "...");
       } else {
-          System.out.println("Contato não localizado por esse número!");
+          System.out.println("CONTATO NÃO LOCALIZADO POR ESSE TELEFONE!");
       }
   }
   
 // função para excluir tudo da agenda
   public void limpezadeagenda() {
       contatos.clear();
-      System.out.println("Agenda foi limpa!");
+      System.out.println("AGENDA ESTÁ LIMPA COM SUCESSO!");
       exportacontato();
   }
 }
