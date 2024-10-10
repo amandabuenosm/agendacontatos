@@ -33,6 +33,7 @@ public class Main {
                     agenda.exportacontato();
                     break;
                 case 3:
+                    System.out.println("-----------------------------------");
                     System.out.print("Nome: ");
                     String nome = scanner.nextLine();
                     System.out.print("Telefone: ");
@@ -53,6 +54,7 @@ public class Main {
                     break;
                 case 6:
                     System.out.print("Nome: ");
+                    System.out.println("-----------------------------------");
                     String buscapornome = scanner.nextLine();
                     agenda.contatospornome(buscapornome);
                     break;
@@ -73,10 +75,11 @@ public class Main {
                     agenda.limpezadeagenda();
                     break;
                 case 11:
-                    System.out.print("Encerrando aplicação de agenda de contatos...");
+                    System.out.println("-----------------------------------");
+                    System.out.print("ENCERRANDO AGENDA DE CONTATOS...");
                     break;
                 default:
-                    System.out.print("Opção inválida! Tente novamente.");
+                    System.out.print("OPÇÃO INVÁLIDA! TENTE DE NOVO!\n");
                     break;
                 } 
             } while (opcaouser != 11);
