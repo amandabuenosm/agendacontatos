@@ -10,29 +10,24 @@ public class Main {
         do {
             System.out.println("-----------------------------------");
             System.out.println("Menu do Usuário da Agenda:");
-            System.out.println("1 - Importar Contatos");
-            System.out.println("2 - Exportar Contatos");
-            System.out.println("3 - Criar novo Contato");
-            System.out.println("4 - Remover Contato por Telefone");
-            System.out.println("5 - Remover Contato por Nome");
-            System.out.println("6 - Localizar Contato por Nome");
-            System.out.println("7 - Localizar Contato por Telefone");
-            System.out.println("8 - Listar todos os Contatos");
-            System.out.println("9 - Realizar Chamada");
-            System.out.println("10 - Limpar Agenda");
-            System.out.println("11 - Sair");
+            System.out.println("1 - Salvar Contatos");
+            System.out.println("2 - Criar novo Contato");
+            System.out.println("3 - Excluir Contato por Nome");
+            System.out.println("4 - Buscar Contato por Nome");
+            System.out.println("5 - Buscar Contato por Telefone");
+            System.out.println("6 - Listar todos os Contatos");
+            System.out.println("7 - Limpar Agenda");
+            System.out.println("8 - Editar Contato");
+            System.out.println("9 - Sair");
             System.out.print("Escolha uma opção:");
             opcaouser = scanner.nextInt();
             scanner.nextLine();
 
             switch (opcaouser) {
                 case 1:
-                    agenda.importacontato("data/contatos.txt");
+                    agenda.salvarcontato();
                     break;
                 case 2:
-                    agenda.exportacontato();
-                    break;
-                case 3:
                     System.out.println("-----------------------------------");
                     System.out.print("Nome: ");
                     String nome = scanner.nextLine();
@@ -42,39 +37,32 @@ public class Main {
                     String end = scanner.nextLine();
                     agenda.novocontato(nome, fone, end);
                     break;
-                case 4:
-                    System.out.print("Número de Telefone: ");
-                    String deletatelefone = scanner.nextLine();
-                    agenda.deletaportelefone(deletatelefone);
-                    break;
-                case 5:
+                case 3:
                     System.out.print("Nome: ");
                     String deletanome = scanner.nextLine();
                     agenda.deletapornome(deletanome);
                     break;
-                case 6:
+                case 4:
                     System.out.print("Nome: ");
                     System.out.println("-----------------------------------");
                     String buscapornome = scanner.nextLine();
                     agenda.contatospornome(buscapornome);
                     break;
-                case 7:
+                case 5:
                     System.out.print("Telefone: ");
                     String buscaporfone = scanner.nextLine();
                     agenda.contatoporfone(buscaporfone);
                     break;
-                case 8:
+                case 6:
                     agenda.listadecontato();
                     break;
-                case 9:
-                    System.out.print("Número de Telefone: ");
-                    String fonechamada = scanner.nextLine();
-                    agenda.fazerchamada(fonechamada);
-                    break;
-                case 10:
+                case 7:
                     agenda.limpezadeagenda();
                     break;
-                case 11:
+                // case 8: 
+                //     agenda.editarcontato();
+                //     break;
+                case 9:
                     System.out.println("-----------------------------------");
                     System.out.print("ENCERRANDO AGENDA DE CONTATOS...");
                     break;
