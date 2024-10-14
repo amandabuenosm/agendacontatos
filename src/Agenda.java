@@ -8,30 +8,10 @@ public class Agenda {
   public Agenda(String localarquivo) {
     this.contatos = new HashMap<>();
     this.localarquivo = localarquivo;
-    importacontato(localarquivo);
-  }
-  
-  // função de importação de contatos
-  public void importacontato(String localarquivo) {
-    try (BufferedReader br = new BufferedReader(new FileReader(localarquivo))) {
-        String linha;
-        while ((linha = br.readLine()) != null) {
-            String[] dadosdocontato = linha.split("@");
-            if (dadosdocontato.length == 3) {
-                String nome = dadosdocontato[0];
-                String fone = dadosdocontato[1];
-                String end = dadosdocontato[2];
-                Contato contato = new Contato(nome, fone, end);
-                contatos.put(fone, contato);
-            }
-        }
-    } catch (IOException e) {
-        System.out.println("ERRO NA IMPORTAÇÃO DOS CONTATOS: " + e.getMessage());
-    }
   }
 
-// função para exportar/salvar/atualizar contatos
-  public void exportacontato() {
+// função para salvar/atualizar contatos
+  public void salvarcontato() {
     try (BufferedWriter bw = new BufferedWriter(new FileWriter(localarquivo))) {
         for (Contato contato : contatos.values()) {
             bw.write(contato.getNome() + "@" + contato.getTelefone() + "@" + contato.getEndereco());
@@ -47,16 +27,7 @@ public class Agenda {
     Contato contato = new Contato(nome, fone, end);
         contatos.put(fone, contato);
         System.out.println("CONTATO NOVO GRAVADO COM SUCESSO!");
-        exportacontato(); 
-  }
-
-// função de exclusão por telefone
-  public void deletaportelefone(String fone) {
-    if(contatos.remove(fone) != null) {
-    System.out.println("CONTATO EXCLUÍDO COM SUCESSO!");
-    } else {
-      System.out.println("CONTATO NÃO LOCALIZADO POR ESSE TELEFONE!");
-    } exportacontato();
+        salvarcontato(); 
   }
 
 // função de exclusão por nome
@@ -66,7 +37,7 @@ public class Agenda {
       System.out.println("CONTATO EXCLUÍDO COM SUCESSO!");
     } else {
       System.out.println("CONTATO NÃO LOCALIZADO POR ESSE NOME!");
-    } exportacontato();
+    } salvarcontato();
   }
 
   
@@ -98,23 +69,13 @@ public class Agenda {
         for (Contato contato : contatos.values()) {
             System.out.println(contato);
         }
-    } exportacontato(); 
+    } salvarcontato(); 
   }
-  
-// função de realizar chamada para determinado contato por telefone
-  public void fazerchamada(String fone) {
-      Contato contato = contatos.get(fone);
-      if (contato != null) {
-          System.out.println("FAZENDO CHAMADA PARA " + contato.getNome() + "...");
-      } else {
-          System.out.println("CONTATO NÃO LOCALIZADO POR ESSE TELEFONE!");
-      }
-  }
-  
+
 // função para excluir tudo da agenda
   public void limpezadeagenda() {
       contatos.clear();
       System.out.println("AGENDA ESTÁ LIMPA COM SUCESSO!");
-      exportacontato();
+      salvarcontato();
   }
 }
