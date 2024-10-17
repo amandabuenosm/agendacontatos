@@ -63,8 +63,8 @@ public class Main {
                     agenda.limpezadeagenda();
                     break;
                 case 9: 
-                System.out.print("Nome: ");
-                String editarpornome = scanner.nextLine();
+                    System.out.print("Nome: ");
+                    String editarpornome = scanner.nextLine();
                     agenda.editarcontato(editarpornome);
                     break;
                 case 0:
