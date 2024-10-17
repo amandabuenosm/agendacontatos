@@ -9,6 +9,7 @@ public class Contato {
         this.end = end;
     }
 
+    // obter dados do arquivo
     public String getNome() {
         return nome;
     }
@@ -21,6 +22,19 @@ public class Contato {
         return end;
     }
 
+    // correspondência de variáveis caso algo seja atualizado 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setTelefone(String telefone) {
+        this.fone = fone;
+    }
+
+    public void setEndereco(String endereco) {
+        this.end = end;
+    }
+    
     @Override
     public String toString() {
         return "\n----------------------------------" +
