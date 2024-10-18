@@ -1,18 +1,13 @@
-## Getting Started
+Esse projeto em JAVA é um sistema de agenda de contatos, feito com a ferramenta Scanner para a coleta de informações, que utiliza a função HashMap para fazer o gerenciamento dos dados dessa agenda. A aplicação fornece as seguintes ações: 
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+- Importar Contatos: traz os dados dos contatos de um arquivo TXT no formato nome@telefone@endereço.
+- Atualizar contatos: salva dados de contatos existentes.
+- Inserir Contato: criar novos contatos.
+- Remover Contato por Nome: exclui um contato pelo nome.
+- Localizar Contato por Nome ou Telefone: faz a busca de contatos usando o nome ou telefone.
+- Listar Todos os Contatos: faz uma listagem de todos os contatos da agenda.
+- Limpar Agenda: exclui todos os contatos, sem exceções.
+- Editar Contato: permite editar dados de um contato existente, ao buscar pelo nome do contato.
+- Sair da Agenda: encerra o sistema de agenda.
 
-## Folder Structure
-
-The workspace contains two folders by default, where:
-
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
-
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
-
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+O arquivo de importação segue o formato nome@telefone@endereço. O HashMap é responsável por fazer a organização de cada contato, usando o nome como chave e dados como valores.
