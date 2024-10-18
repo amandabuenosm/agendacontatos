@@ -41,17 +41,19 @@ public class Main {
                     agenda.novocontato(nome, fone, end);
                     break;
                 case 4:
+                    System.out.println("-----------------------------------");
                     System.out.print("Nome: ");
                     String deletanome = scanner.nextLine();
                     agenda.deletapornome(deletanome);
                     break;
                 case 5:
-                    System.out.print("Nome: ");
                     System.out.println("-----------------------------------");
+                    System.out.print("Nome: ");
                     String buscapornome = scanner.nextLine();
                     agenda.contatospornome(buscapornome);
                     break;
                 case 6:
+                    System.out.println("-----------------------------------");
                     System.out.print("Telefone: ");
                     String buscaporfone = scanner.nextLine();
                     agenda.contatoporfone(buscaporfone);
@@ -63,6 +65,7 @@ public class Main {
                     agenda.limpezadeagenda();
                     break;
                 case 9: 
+                    System.out.println("-----------------------------------");
                     System.out.print("Nome: ");
                     String editarpornome = scanner.nextLine();
                     agenda.editarcontato(editarpornome);
@@ -72,6 +75,7 @@ public class Main {
                     System.out.print("ENCERRANDO AGENDA DE CONTATOS...");
                     break;
                 default:
+                    System.out.println("-----------------------------------");
                     System.out.print("OPÇÃO INVÁLIDA! TENTE DE NOVO!\n");
                     break;
                 } 
