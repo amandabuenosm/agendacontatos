@@ -10,7 +10,7 @@ public class Agenda {
     this.contatos = new HashMap<>();
     this.localarquivo = localarquivo;
     importararquivo();
-  
+  }
 
 // função para carregar dados dos contatos no arquivo
   public void importararquivo() {
