@@ -27,18 +27,18 @@ public class Contato {
         this.nome = nome;
     }
 
-    public void setTelefone(String telefone) {
+    public void setTelefone(String fone) {
         this.fone = fone;
     }
 
-    public void setEndereco(String endereco) {
+    public void setEndereco(String end) {
         this.end = end;
     }
     
     @Override
     public String toString() {
-        return "\n----------------------------------" +
-        "Nome: " + nome +
+        return "----------------------------------" +
+        "\nNome: " + nome +
         "\nTelefone: " + fone +
         "\nEndereço: " + end;
     }
