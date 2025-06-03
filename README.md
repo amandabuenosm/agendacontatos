@@ -1,13 +1,5 @@
-Esse projeto em JAVA é um sistema de agenda de contatos, feito com a ferramenta Scanner para a coleta de informações, que utiliza a função HashMap para fazer o gerenciamento dos dados dessa agenda. A aplicação fornece as seguintes ações: 
+Este projeto em Java implementa um sistema de agenda de contatos baseado na utilização da classe Scanner para entrada de dados e na estrutura HashMap para o gerenciamento eficiente das informações. Os contatos são importados de arquivos .txt no formato nome@telefone@endereço, sendo armazenados com o nome como chave primária e os demais dados como valor associado, garantindo buscas rápidas e organização estruturada.
 
-- Importar Contatos: traz os dados dos contatos de um arquivo TXT no formato nome@telefone@endereço.
-- Atualizar contatos: salva dados de contatos existentes.
-- Inserir Contato: criar novos contatos.
-- Remover Contato por Nome: exclui um contato pelo nome.
-- Localizar Contato por Nome ou Telefone: faz a busca de contatos usando o nome ou telefone.
-- Listar Todos os Contatos: faz uma listagem de todos os contatos da agenda.
-- Limpar Agenda: exclui todos os contatos, sem exceções.
-- Editar Contato: permite editar dados de um contato existente, ao buscar pelo nome do contato.
-- Sair da Agenda: encerra o sistema de agenda.
+A aplicação disponibiliza operações fundamentais como importação de contatos, inserção, edição e remoção, busca por nome ou telefone, listagem completa e limpeza total da agenda. Todas as ações são orientadas por um menu interativo e seguem os princípios da programação orientada a objetos, assegurando modularidade, legibilidade e potencial de escalabilidade.
 
-O arquivo de importação segue o formato nome@telefone@endereço. O HashMap é responsável por fazer a organização de cada contato, usando o nome como chave e dados como valores.
+Além de entregar uma solução funcional, o sistema adota boas práticas de engenharia de software, como uso eficiente de coleções e leitura segura de arquivos. Com uma estrutura leve e responsiva, é ideal para contextos que demandam gerenciamento local de contatos, podendo evoluir para integrações com interfaces gráficas ou persistência em bancos de dados relacionais.
